@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">EmployApplication</string>
+
+    <!-- 登录页面 -->
+    <string name="phone_number">Phone Number</string>
+    <string name="enter_security_code">Security Code Please</string>
+    <string name="send_security_code">Send Security Code</string>
+    <string name="login_now">Login</string>
+    <!-- 登录错误提示 -->
+    <string name="login_error_tip_1">Security Code Error</string>
+    <string name="login_error_tip_2">Phone Number Empty</string>
+    <string name="login_error_tip_3">Phone Number Illegal</string>
+    <string name="login_error_tip_4">Network Error</string>
+</resources>

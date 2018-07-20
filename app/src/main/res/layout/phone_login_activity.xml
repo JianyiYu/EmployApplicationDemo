@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="16dp"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <EditText
+        android:id="@+id/phone_number_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:hint="Phone Number"
+        android:singleLine="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="8dp">
+
+        <EditText
+            android:id="@+id/security_code_edit"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:hint="Security Code Please"
+            android:singleLine="true" />
+
+        <Button
+            android:id="@+id/send_security_code_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:text="Send Security Code" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/error_tips_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:textSize="14dp"
+        android:textColor="@android:color/holo_red_light"
+        android:text="Error tips"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/phone_login_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="4dp"
+        android:text="Login"/>
+
+</LinearLayout>
