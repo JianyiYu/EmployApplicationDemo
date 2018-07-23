@@ -1,5 +1,6 @@
 package com.demo.jaden.employapplication.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -9,7 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.demo.jaden.employapplication.activity.BaseActivity;
 import com.demo.jaden.employapplication.R;
 
 public class PhoneLoginActivity extends BaseActivity {
@@ -41,7 +41,7 @@ public class PhoneLoginActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.phone_login_activity);
+        setContentView(R.layout.activity_phone_login);
 
         initView();
     }
@@ -80,5 +80,7 @@ public class PhoneLoginActivity extends BaseActivity {
 
     private void phoneNumberLogin(String code, Handler handler){
 
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
