@@ -4,6 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,9 @@ import com.demo.jaden.employapplication.fragment.JobListFragment;
 import com.demo.jaden.employapplication.fragment.JobContent;
 import com.demo.jaden.employapplication.fragment.SettingFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements JobListFragment.OnListFragmentInteractionListener,
         ConversationFragment.OnFragmentInteractionListener, SettingFragment.OnFragmentInteractionListener {
 
@@ -26,11 +30,15 @@ public class MainActivity extends AppCompatActivity implements JobListFragment.O
 
     private FragmentManager fragmentManager;
 
-    private JobListFragment jobListFragment = new JobListFragment();
+    private JobListFragment jobListFragment;
 
-    private ConversationFragment conversationFragment = new ConversationFragment();
+    private ConversationFragment conversationFragment;
 
-    private SettingFragment settingFragment = new SettingFragment();
+    private SettingFragment settingFragment;
+
+    private List<Fragment> fragments;
+
+    private int currentFragmentIndex;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -39,13 +47,13 @@ public class MainActivity extends AppCompatActivity implements JobListFragment.O
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_job:
-                    showJobListFragment();
+                    switchFragment(0);
                     return true;
                 case R.id.navigation_msg:
-                    showConversationFragment();
+                    switchFragment(1);
                     return true;
                 case R.id.navigation_me:
-                    showSettingFragment();
+                    switchFragment(2);
                     return true;
             }
             return false;
@@ -65,36 +73,34 @@ public class MainActivity extends AppCompatActivity implements JobListFragment.O
     }
 
     private void setDefaultFragment(){
+
+        jobListFragment = new JobListFragment();
+        conversationFragment = new ConversationFragment();
+        settingFragment = new SettingFragment();
+
+        fragments = new ArrayList<Fragment>();
+        fragments.add(jobListFragment);
+        fragments.add(conversationFragment);
+        fragments.add(settingFragment);
+
         fragmentManager = getSupportFragmentManager();
         transaction = fragmentManager.beginTransaction();
 
         transaction.replace(R.id.content, jobListFragment);
         transaction.commit();
+
+        currentFragmentIndex = 0;
     }
 
-    private void showJobListFragment(){
-        fragmentManager = getSupportFragmentManager();
-        transaction = fragmentManager.beginTransaction();
+    private void switchFragment(int index){
 
-        transaction.replace(R.id.content, jobListFragment);
-        transaction.commit();
-    }
-
-    private void showConversationFragment(){
-
-        fragmentManager = getSupportFragmentManager();
-        transaction = fragmentManager.beginTransaction();
-
-        transaction.replace(R.id.content, conversationFragment);
-        transaction.commit();
-    }
-
-    private void showSettingFragment(){
-        fragmentManager = getSupportFragmentManager();
-        transaction = fragmentManager.beginTransaction();
-
-        transaction.replace(R.id.content, settingFragment);
-        transaction.commit();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.hide(fragments.get(currentFragmentIndex));      //隐藏当前Fragment
+        if(fragments.get(index).isAdded() == false) {
+            transaction.add(R.id.content, fragments.get(index));
+        }
+        transaction.show(fragments.get(index)).commitAllowingStateLoss();
+        currentFragmentIndex = index;
     }
 
     @Override

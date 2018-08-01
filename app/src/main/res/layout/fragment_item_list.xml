@@ -1,13 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
-    android:name="com.demo.jaden.employapplication.fragment.ItemFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    app:layoutManager="LinearLayoutManager"
-    tools:context=".fragment.JobListFragment"
-    tools:listitem="@layout/fragment_item" />
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        android:layout_weight="0">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#bdbdbd"
+            android:text="@string/job_select_condition_where"
+            android:gravity="center"
+            android:drawableRight="@drawable/ic_trangle_switch_white"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#bdbdbd"
+            android:text="@string/job_select_condition_apartment"
+            android:gravity="center"
+            android:drawableRight="@drawable/ic_trangle_switch_white"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#bdbdbd"
+            android:text="@string/job_select_condition_pay"
+            android:gravity="center"
+            android:drawableRight="@drawable/ic_trangle_switch_white"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="com.demo.jaden.employapplication.fragment.ItemFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layoutManager="LinearLayoutManager"
+        tools:context=".fragment.JobListFragment"
+        tools:listitem="@layout/fragment_item" />
+</LinearLayout>

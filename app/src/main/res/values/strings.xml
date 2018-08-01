@@ -21,6 +21,11 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
 
+    <!-- JobFragment -->
+    <string name="job_select_condition_where">Address</string>
+    <string name="job_select_condition_apartment">Apartment</string>
+    <string name="job_select_condition_pay">Pay</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="conversion_search">Search</string>
 
