@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">EmployApplication</string>
 
+    <!-- Splash -->
+    <string name="enter_app">Start now</string>
+
     <!-- 登录页面 -->
     <string name="phone_number">Phone Number</string>
     <string name="enter_security_code">Security Code Please</string>

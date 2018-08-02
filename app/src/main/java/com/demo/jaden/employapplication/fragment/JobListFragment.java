@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.demo.jaden.employapplication.R;
+import com.demo.jaden.employapplication.adapter.JobItemRecyclerViewAdapter;
 import com.demo.jaden.employapplication.fragment.JobContent.JobItem;
 
 /**

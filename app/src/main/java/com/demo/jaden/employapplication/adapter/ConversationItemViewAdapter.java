@@ -1,4 +1,4 @@
-package com.demo.jaden.employapplication.fragment;
+package com.demo.jaden.employapplication.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.demo.jaden.employapplication.R;
+import com.demo.jaden.employapplication.fragment.ConversationFragment;
+import com.demo.jaden.employapplication.fragment.CoversationContent;
 
 import java.util.List;
 

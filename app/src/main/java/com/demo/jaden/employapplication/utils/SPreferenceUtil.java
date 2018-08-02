@@ -51,4 +51,8 @@ public class SPreferenceUtil {
     public boolean getBoolean(String key, boolean defaultValue){
         return sPrefers.getBoolean(key, defaultValue);
     }
+
+    public void remove(String key){
+        editor.remove(key).commit();
+    }
 }

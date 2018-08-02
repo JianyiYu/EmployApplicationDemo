@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.demo.jaden.employapplication.R;
+import com.demo.jaden.employapplication.adapter.ConversationItemViewAdapter;
 
 /**
  * A simple {@link Fragment} subclass.

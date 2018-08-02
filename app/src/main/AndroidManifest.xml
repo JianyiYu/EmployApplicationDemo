@@ -12,18 +12,36 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashActivity">
+        <activity android:name=".activity.SplashActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity"></activity>
-        <activity android:name=".activity.PhoneLoginActivity"></activity>
+        <activity android:name=".activity.LoginActivity"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".activity.PhoneLoginActivity"
+            android:launchMode="singleTop"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+
+        </activity>
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>
