@@ -12,7 +12,8 @@ import android.view.ViewGroup;
 
 import com.demo.jaden.employapplication.R;
 import com.demo.jaden.employapplication.adapter.JobItemRecyclerViewAdapter;
-import com.demo.jaden.employapplication.fragment.JobContent.JobItem;
+import com.demo.jaden.employapplication.model.JobContent;
+import com.demo.jaden.employapplication.model.JobContent.JobItem;
 
 /**
  * A fragment representing a list of Items.

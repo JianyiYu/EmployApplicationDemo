@@ -1,6 +1,5 @@
 package com.demo.jaden.employapplication.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -12,6 +11,7 @@ import android.widget.LinearLayout;
 import com.demo.jaden.employapplication.R;
 import com.demo.jaden.employapplication.adapter.ImageViewPagerAdapter;
 import com.demo.jaden.employapplication.constants.Constants;
+import com.demo.jaden.employapplication.login.PhoneLoginActivity;
 import com.demo.jaden.employapplication.utils.SPreferenceUtil;
 import com.demo.jaden.employapplication.utils.StringUtil;
 

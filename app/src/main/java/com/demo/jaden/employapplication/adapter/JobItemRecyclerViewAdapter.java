@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.demo.jaden.employapplication.R;
 import com.demo.jaden.employapplication.fragment.JobListFragment.OnListFragmentInteractionListener;
-import com.demo.jaden.employapplication.fragment.JobContent.JobItem;
+import com.demo.jaden.employapplication.model.JobContent.JobItem;
 
 import java.util.List;
 

@@ -12,35 +12,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activity.SplashActivity"
             android:configChanges="keyboardHidden|orientation"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.Splash">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.LoginActivity"
+
+        <activity android:name=".login.LoginActivity"
             android:launchMode="singleTop"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">
-
         </activity>
-        <activity android:name=".activity.PhoneLoginActivity"
+
+        <activity android:name=".login.PhoneLoginActivity"
             android:launchMode="singleTop"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">
-
         </activity>
+
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/title_activity_main"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait">
+        </activity>
 
+        <activity
+            android:name=".activity.ChatActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name=".activity.JobDetailActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 

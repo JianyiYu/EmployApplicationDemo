@@ -1,5 +1,6 @@
 package com.demo.jaden.employapplication.activity;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -7,22 +8,22 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.demo.jaden.employapplication.R;
 import com.demo.jaden.employapplication.fragment.ConversationFragment;
-import com.demo.jaden.employapplication.fragment.CoversationContent;
+import com.demo.jaden.employapplication.model.CoversationContent;
 import com.demo.jaden.employapplication.fragment.JobListFragment;
-import com.demo.jaden.employapplication.fragment.JobContent;
+import com.demo.jaden.employapplication.model.JobContent;
 import com.demo.jaden.employapplication.fragment.SettingFragment;
+import com.demo.jaden.employapplication.fragment.SettingFragment.OnFragmentInteractionListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements JobListFragment.OnListFragmentInteractionListener,
-        ConversationFragment.OnFragmentInteractionListener, SettingFragment.OnFragmentInteractionListener {
+public class MainActivity extends BaseActivity implements JobListFragment.OnListFragmentInteractionListener,
+        ConversationFragment.OnFragmentInteractionListener, OnFragmentInteractionListener {
 
     private TextView mTextMessage;
 
@@ -106,6 +107,15 @@ public class MainActivity extends AppCompatActivity implements JobListFragment.O
     @Override
     public void onListFragmentInteraction(JobContent.JobItem item) {
 
+        Intent intent = new Intent(this, JobDetailActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onFragmentInteraction(CoversationContent.ConversationItem item) {
+
+        Intent intent = new Intent(this, ChatActivity.class);
+        startActivity(intent);
     }
 
     @Override

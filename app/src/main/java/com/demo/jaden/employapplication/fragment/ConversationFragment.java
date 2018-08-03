@@ -1,7 +1,6 @@
 package com.demo.jaden.employapplication.fragment;
 
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.demo.jaden.employapplication.R;
 import com.demo.jaden.employapplication.adapter.ConversationItemViewAdapter;
+import com.demo.jaden.employapplication.model.CoversationContent;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -78,9 +78,9 @@ public class ConversationFragment extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(CoversationContent.ConversationItem item) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            mListener.onFragmentInteraction(item);
         }
     }
 
@@ -113,6 +113,6 @@ public class ConversationFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onFragmentInteraction(CoversationContent.ConversationItem view);
     }
 }

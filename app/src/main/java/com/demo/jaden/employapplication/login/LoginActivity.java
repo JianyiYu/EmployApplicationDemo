@@ -1,4 +1,4 @@
-package com.demo.jaden.employapplication.activity;
+package com.demo.jaden.employapplication.login;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.demo.jaden.employapplication.R;
+import com.demo.jaden.employapplication.activity.BaseActivity;
 import com.demo.jaden.employapplication.network.NetworkManager;
 
 public class LoginActivity extends BaseActivity {

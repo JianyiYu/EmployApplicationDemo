@@ -5,4 +5,6 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="point_size">5dp</dimen>
     <dimen name="point_margin">10dp</dimen>
+    <dimen name="bottom_component_margin_vertical">8dp</dimen>
+    <dimen name="bottom_component_margin_horizontal">6dp</dimen>
 </resources>

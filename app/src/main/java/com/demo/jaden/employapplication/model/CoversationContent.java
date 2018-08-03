@@ -1,4 +1,4 @@
-package com.demo.jaden.employapplication.fragment;
+package com.demo.jaden.employapplication.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

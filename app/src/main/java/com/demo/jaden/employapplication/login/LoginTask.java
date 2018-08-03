@@ -9,7 +9,7 @@ import okhttp3.RequestBody;
 
 public class LoginTask extends AsyncTask {
 
-    private static final String url = "http://baidu.com";
+    private static final String url = "https://baidu.com";
 
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 

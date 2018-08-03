@@ -35,37 +35,30 @@ public class NetworkManager {
 
         final LoginTask loginTask = new LoginTask(accountId, passWord);
 
-        new Thread(new Runnable() {
+        loginTask.post(new Callback() {
             @Override
-            public void run() {
-                loginTask.post(new Callback() {
-                    @Override
-                    public void onFailure(Call call, IOException e) {
-                        System.out.println(e);
-                    }
-
-                    @Override
-                    public void onResponse(Call call, Response response) throws IOException {
-
-                        //获取响应结果并解析
-                        if (!response.isSuccessful()) {
-                            System.out.println(response);
-                            return;
-                        }
-
-                        Headers responseHeaders = response.headers();
-                        for (int i = 0, size = responseHeaders.size(); i < size; i++) {
-                            System.out.println(responseHeaders.name(i) + ": "
-                                    + responseHeaders.value(i));
-                        }
-
-                        System.out.println(response.body().string());
-                    }
-                });
+            public void onFailure(Call call, IOException e) {
+                System.out.println(e);
             }
-        }).start();
 
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
 
+                //获取响应结果并解析
+                if (!response.isSuccessful()) {
+                    System.out.println(response);
+                    return;
+                }
+
+                Headers responseHeaders = response.headers();
+                for (int i = 0, size = responseHeaders.size(); i < size; i++) {
+                    System.out.println(responseHeaders.name(i) + ": "
+                            + responseHeaders.value(i));
+                }
+
+                System.out.println(response.body().string());
+            }
+        });
     }
 
     public void syncGet(){

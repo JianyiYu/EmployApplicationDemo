@@ -29,8 +29,18 @@
     <string name="job_select_condition_apartment">Apartment</string>
     <string name="job_select_condition_pay">Pay</string>
 
+    <!-- ChatActivity -->
+    <string name="action_send">Send</string>
+    <string name="action_common_language">Common</string>
+    <string name="action_start_communicate">Start Communicate</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="conversion_search">Search</string>
+
+    <string name="work_address_area">Area</string>
+    <string name="work_address_comp">Company</string>
+    <string name="work_detail_requirement">Detail Requirement</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

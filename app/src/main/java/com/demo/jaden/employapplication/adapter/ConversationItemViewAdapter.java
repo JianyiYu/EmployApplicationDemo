@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.demo.jaden.employapplication.R;
 import com.demo.jaden.employapplication.fragment.ConversationFragment;
-import com.demo.jaden.employapplication.fragment.CoversationContent;
+import com.demo.jaden.employapplication.model.CoversationContent;
 
 import java.util.List;
 
@@ -30,9 +30,14 @@ public class ConversationItemViewAdapter extends RecyclerView.Adapter<Conversati
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(final ViewHolder viewHolder, int i) {
 
-
+        viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mListener.onFragmentInteraction(viewHolder.mItem);
+            }
+        });
     }
 
     @Override
@@ -42,13 +47,14 @@ public class ConversationItemViewAdapter extends RecyclerView.Adapter<Conversati
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-
+        public final View mView;
+        private CoversationContent.ConversationItem mItem;
         TextView name;
         TextView lastMsg;
 
         public ViewHolder(View view){
             super(view);
-
+            mView = view;
             name = view.findViewById(R.id.user_name_view);
             lastMsg = view.findViewById(R.id.last_msg_view);
         }
